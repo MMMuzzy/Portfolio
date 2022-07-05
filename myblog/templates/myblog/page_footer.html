@@ -1,0 +1,25 @@
+<div class="w3-row">
+    <div style="width: 47%; float: left;">
+        {% if posts.has_previous %}
+            <button onclick="location.href='?page={{ posts.previous_page_number }}'"
+                    class="w3-button w3-black w3-padding-large w3-margin-bottom" >
+                Previous</button>
+        {% else %}
+            <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom" >
+                Previous</button>
+        {% endif %}
+    </div>
+    <div style="display: inline-block; text-align: center">
+          <p><span class="w3-padding-large w3-right">Page {{ posts.number }}</span></p>
+    </div>
+    <div style="float: right;">
+        {% if posts.has_next %}
+            <button onclick="location.href='?page={{ posts.next_page_number }}'"
+                    class="w3-button w3-black w3-padding-large w3-margin-bottom" >
+                Next »</button>
+        {% else %}
+            <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom" >
+                Next »</button>
+        {% endif %}
+    </div>
+</div>

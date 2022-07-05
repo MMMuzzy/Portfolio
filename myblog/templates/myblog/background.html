@@ -1,0 +1,15 @@
+{% extends "myblog/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <script src="{% static 'myblog/background.js' %}" type="module"></script>
+    <link href="{% static 'myblog/background.css' %}" rel="stylesheet" type="text/css">
+    <canvas id="artboard"></canvas>
+    <div id="smoke">
+        <h1 class="display-1">Li Cai</h1>
+    </div>
+    <div id='name-card-container'>
+        {% include 'myblog/navbar.html' %}
+    </div>
+{% endblock %}

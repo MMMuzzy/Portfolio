@@ -1,0 +1,14 @@
+<div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><br>
+        {% for tag in tags %}
+        <a href="{% url 'filter_post' tag.id %}" style="color: inherit; text-decoration: none;">
+            <span class="w3-tag w3-light-grey w3-medium w3-margin-bottom w3-hover-black">{{ tag.name }}</span>
+        </a>
+        {% endfor %}
+    </p>
+    </div>
+</div>

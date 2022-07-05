@@ -1,0 +1,16 @@
+<div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Recent Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+        {% for post in recent %}
+          <a href="{% url 'post' post.id %}" class="w3-hover-none" style="color: inherit; text-decoration: none;">
+            <li class="w3-padding-16">
+                <span class="w3-large">{{ post.title }}</span><br>
+                <span>{{ post.datetime }}</span>
+            </li>
+          </a>
+        {% endfor %}
+    </ul>
+</div>
+<hr>

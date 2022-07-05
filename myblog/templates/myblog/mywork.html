@@ -1,0 +1,30 @@
+{% for post in posts %}
+ <!-- Blog entry -->
+    <div class="w3-half">
+      <div class="w3-card-4 w3-margin w3-white">
+        {% if post.thumbnail %}
+            <img src="{{post.thumbnail.url}}" style="width:100%; height: 300px" alt="thumbnail">
+        {% endif %}
+            <div class="w3-container">
+              <h3><b>{{ post.title }}</b></h3>
+              <h5><span class="w3-opacity">{{ post.datetime }}</span></h5>
+            </div>
+            <div class="w3-container w3-white">
+              {% for tag in post.tags.all %}
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">{{ tag.name }}</span>
+              {% endfor %}
+            </div>
+            <div class="w3-container">
+              <p>{{ post.shorttext }}</p>
+              <div class="w3-row">
+                <div class="w3-col m8 s12">
+                  <p><button class="w3-button w3-padding-large w3-white w3-border" onclick="location.href='{% url 'post' post.id %}'">
+                      <b>READ MORE »</b>
+                  </button></p>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+<!-- END BLOG ENTRIES -->
+{% endfor %}
